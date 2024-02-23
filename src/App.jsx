@@ -1,10 +1,13 @@
+import Home from "./pages/Home";
+import Video from "./pages/Video";
 
 const App = () => {
   return (
     <div>
-      <h1>React App</h1>
+      <Home />
+      <Video />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

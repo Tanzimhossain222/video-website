@@ -1,7 +1,8 @@
+import PropsType from "prop-types";
 import likeIcon from "../../../assets/like.svg";
 import unlikeIcon from "../../../assets/unlike.svg";
 
-const LikeUnlike = () => {
+const LikeUnlike = ({ likes, unlikes }) => {
   return (
     <>
       <div className="flex gap-10 w-48">
@@ -9,17 +10,26 @@ const LikeUnlike = () => {
           <div className="shrink-0">
             <img className="w-5 block" src={likeIcon} alt="Like" />
           </div>
-          <div className="text-sm leading-[1.7142857] text-slate-600">100K</div>
+          <div className="text-sm leading-[1.7142857] text-slate-600">
+            {likes}K
+          </div>
         </div>
         <div className="flex gap-1">
           <div className="shrink-0">
             <img className="w-5 block" src={unlikeIcon} alt="Unlike" />
           </div>
-          <div className="text-sm leading-[1.7142857] text-slate-600">100K</div>
+          <div className="text-sm leading-[1.7142857] text-slate-600">
+            {unlikes}K
+          </div>
         </div>
       </div>
     </>
   );
+};
+
+LikeUnlike.propTypes = {
+  likes: PropsType.number,
+  unlikes: PropsType.number,
 };
 
 export default LikeUnlike;

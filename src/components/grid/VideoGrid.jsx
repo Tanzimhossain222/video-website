@@ -9,7 +9,6 @@ const VideoGrid = () => {
     (state) => state.videos
   );
 
-  console.log(videos);
 
   const dispatch = useDispatch();
 

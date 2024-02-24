@@ -3,18 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchVideos } from "../../redux/features/videos/videosSlice";
 import Loading from "../ui/Loading";
 import VideoGridItem from "./VideoGridItem";
+import { useNavigate, useMatch } from "react-router-dom";
 
 const VideoGrid = () => {
   const { videos, error, isLoading, isError } = useSelector(
     (state) => state.videos
   );
 
+  const { tags, search } = useSelector((state) => state.filter);
 
   const dispatch = useDispatch();
+  
+
 
   useEffect(() => {
-    dispatch(fetchVideos());
-  }, [dispatch]);
+    dispatch(fetchVideos({ tags, search }));
+
+  }, [dispatch, tags, search]);
 
   let content = null;
 

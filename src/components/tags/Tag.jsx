@@ -4,33 +4,9 @@ import {
   tagRemoved,
   tagSelected,
 } from "../../redux/features/filter/filterSlice";
+import colorMap from "../../utils/colors";
 
-const colorMap = {
-  blue: {
-    bg: "bg-blue-100",
-    text: "text-blue-600",
-  },
-  red: {
-    bg: "bg-red-100",
-    text: "text-red-600",
-  },
-  green: {
-    bg: "bg-green-100",
-    text: "text-green-600",
-  },
-  yellow: {
-    bg: "bg-yellow-100",
-    text: "text-yellow-600",
-  },
-  gray: {
-    bg: "bg-gray-100",
-    text: "text-gray-600",
-  },
-  cyan: {
-    bg: "bg-cyan-100",
-    text: "text-cyan-600",
-  },
-};
+
 
 const Tag = ({ title }) => {
   const { tags: selectedTags } = useSelector((state) => state.filter);
@@ -73,3 +49,6 @@ Tag.propTypes = {
 };
 
 export default Tag;
+
+
+
